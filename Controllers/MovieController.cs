@@ -18,13 +18,13 @@ public class MovieController : ControllerBase
     [HttpGet("search")]
     public async Task<IActionResult> Search(string name)
     {
-        var apiKey = "591a0ae5";
+        var apiKey = "591a0ae5"; // movieleri aldığımız api
 
         var client = new HttpClient();
 
         var url = $"http://www.omdbapi.com/?s={name}&apikey={apiKey}";
 
-        var response = await client.GetStringAsync(url);
+        var response = await client.GetStringAsync(url); // istek
 
         var json = JsonSerializer.Deserialize<object>(response);
 

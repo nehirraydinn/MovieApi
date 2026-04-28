@@ -39,7 +39,7 @@ namespace MovieApi.Controllers
                 Password = dto.Password
             };
 
-            // KAYDET
+            // KAYDET DATABASE'E
             db.Users.Add(user);
             db.SaveChanges();
 

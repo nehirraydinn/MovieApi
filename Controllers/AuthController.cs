@@ -20,6 +20,7 @@ namespace MovieApi.Controllers
         [HttpPost("google")]
         public async Task<IActionResult> GoogleLogin([FromBody] GoogleDto dto)
         {
+            // token doğrulama
             var payload = await GoogleJsonWebSignature.ValidateAsync(dto.Token);
 
             var email = payload.Email;
