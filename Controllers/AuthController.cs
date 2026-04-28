@@ -39,7 +39,11 @@ namespace MovieApi.Controllers
                 db.SaveChanges();
             }
 
-            return Ok(new { userId = user.Id });
+            return Ok(new
+            {
+                userId = user.Id,
+                username = user.Username
+            });
         }
     }
 }
